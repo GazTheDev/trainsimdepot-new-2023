@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "TrainSimDepot.neta",
+    "base_url": "trainsimdepot.net",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "https://scontent-lcy1-1.xx.fbcdn.net/v/t39.30808-6/236146409_377440577343310_2178816821029272946_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2-hqFq_jjZAAX8Dj6od&_nc_ht=scontent-lcy1-1.xx&oh=00_AfCUJiRv_BvuKfCziU7W12ZFQOE8Qn12qkIpeQzls6uOtw&oe=6464B134",
+    "logo": "https://scontent-lcy1-1.xx.fbcdn.net/v/t39.30808-6/236146409_377440577343310_2178816821029272946_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2-hqFq_jjZAAX8Dj6od&_nc_ht=scontent-lcy1-1.xx&oh=00_AfCUJiRv_BvuKfCziU7W12ZFQOE8Qn12qkIpeQzls6uOtw&oe=6464B134",
+    "logo_width": "200",
+    "logo_height": "34",
+    "logo_text": "Bookworm Light"
+  },
+
+  "settings": {
+    "pagination": 5,
+    "summary_length": 100
+  },
+
+  "metadata": {
+    "meta_author": "TrainSimDepot",
+    "meta_image": "https://scontent-lcy1-1.xx.fbcdn.net/v/t39.30808-6/236146409_377440577343310_2178816821029272946_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2-hqFq_jjZAAX8Dj6od&_nc_ht=scontent-lcy1-1.xx&oh=00_AfCUJiRv_BvuKfCziU7W12ZFQOE8Qn12qkIpeQzls6uOtw&oe=6464B134",
+    "meta_description": "Train Sim Depot is the brand new website for Train Simulator News and Articles."
+  },
+
+  "params": {
+    "contact_form_action": "https://api.web3forms.com/submit",
+    "copyright": "Copyright © 2023  TrainSimDepot.net | Train Simulator News Index "
+  },
+
+  "contactinfo": {
+    "address": "",
+    "email": "contact@trainsimdepot.net",
+    "phone": ""
+  }
+}

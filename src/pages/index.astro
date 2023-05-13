@@ -1,0 +1,110 @@
+---
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import Pagination from "@layouts/components/Pagination.astro";
+import Posts from "@layouts/Posts.astro";
+import { getSinglePage } from "@lib/contentParser.astro";
+import { sortByDate } from "@lib/utils/sortFunctions";
+import { Image, Picture } from '@astrojs/image/components';
+
+const posts = await getSinglePage("posts");
+const sortedPosts = sortByDate(posts);
+const totalPages = Math.ceil(posts.length / config.settings.pagination);
+const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+---
+
+<Base>
+  <section class="section">
+    <div class="">
+      <section class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img src="https://i.ibb.co/bQ3y3zT/main-header.jpg" class="rounded-md	" alt="Class 700">
+          <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+            <div class="mt-4 md:mt-0">
+                     
+                    <h2 class=" page-heading mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"> <a href="/">    Train Sim Depot. </h2>
+              
+                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Your number 1 news website for Train Simulator, Train Sim World and SimRail. We have plenty of news articles, screenshots and other cool bits coming your way!. To stay tuned please add the site to your bookmarks and check out our social media pages</p>
+                <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                    Get started
+                    
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4 w-full p-4">
+        <div class="p-6 bg-gray-100">
+          <p class="text-center text-4xl">
+            <a href="/categories/train-simulator">
+
+              <img src="https://i.ibb.co/0mXWXhT/main-header.jpg" class="rounded-lg max-w-xs transition duration-300 ease-in-out hover:scale-110" />
+            </a>
+            </p>
+      
+          <h2 class="font-bold text-lg text-center text-gray-800 mt-2">
+            Train Simulator Classic News
+          </h2>
+      
+          <p class="mt-2 text-gray-800 text-center">
+            We have the latest news from Train Simulator Classic. Not just from DTG but AP, ATS and much more!.
+          </p>
+        </div>
+        <div class="p-6 bg-gray-100">
+          <p class="text-center text-4xl">
+            <a href="/categories/train-sim-world">
+            <img src="https://i.ibb.co/X4bTDTm/20230405230154-1.jpg" class="rounded-lg max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="20230405230154-1" border="0"></a>
+            </a>
+          </p>
+      
+          <h2 class="font-bold text-lg text-center text-gray-800 mt-2">
+            Train Sim World News
+          </h2>
+      
+          <p class="mt-2 text-gray-800 text-center">
+Check out the latest Train Sim World 3 news. Including Mods, Roadmaps and new DLC.          </p>
+        </div>
+        <div class="p-6 bg-gray-100">
+          <p class="text-center text-4xl">
+            <a href="/categories/simrail-eu">
+
+            <img src="https://i.ibb.co/sCnMmdc/20230403214912-1.jpg" class="rounded-lg max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="20230403214912-1" border="0"></a>
+            </A>
+          </p>
+      
+          <h2 class="font-semibold text-lg text-center text-gray-800 mt-2">
+           SimRail EU
+          </h2>
+      
+          <p class="mt-2 text-gray-800 text-center">
+            We have the latest patch notes from SimRailEU the brand new rail simulation.
+          </p>
+        </div>
+        <div class="p-6 bg-gray-100">
+          <p class="text-center text-4xl">
+           <img 
+           data-te-toggle="popover"
+           data-te-trigger="hover focus"
+           data-te-content="Disabled popover"
+           
+           src="https://i.ibb.co/Rg0K1pp/20230409220836-1.jpg" class="rounded-lg max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="20230409220836-1" border="0"></a>
+          </p>
+      
+          <h2 class="font-bold text-lg text-center text-gray-800 mt-2">
+            Featured Screenshots
+          </h2>
+      
+          <p class="mt-2 text-gray-800 text-center">
+            Coming Soon
+          </p>
+        </div>
+      </div>
+  <br />
+  <div class="container" >
+   <h1 class="h2 page-heading">Latest News</h1>
+    <br />
+      <Posts posts={currentPosts} className="mb-16" />
+      <Pagination currentPage={1} totalPages={totalPages} />
+    </div>
+    </div>
+  </section>
+</Base>

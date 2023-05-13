@@ -1,0 +1,65 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Submit",
+      "url": "/submit"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "News Categories",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Train Sim News",
+          "url": "/categories/train-simulator"
+        },
+        {
+          "name": "Train Sim World 3 News",
+          "url": "categories/train-sim-world"
+        },
+        {
+          "name": "SimRail EU",
+          "url": "categories/simrail-eu"
+        },
+        {
+          "name": "Other Titles",
+          "url": "/categories/other-titles"
+        },
+        {
+          "name": "Downloads",
+          "url": "/categories/downloads"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Elements",
+      "url": "/elements"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
+    }
+  ]
+}
