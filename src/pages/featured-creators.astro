@@ -1,0 +1,81 @@
+---
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import { markdownify } from "@lib/utils/textConverter";
+import { getEntryBySlug } from "astro:content";
+import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa/index.js";
+import Submit from "../layouts/components/submit.astro"; 
+const entry = await getEntryBySlug("pages", "submit");
+const { contact_form_action } = config.params;
+const { address, email, phone } = config.contactinfo;
+const { title, description, meta_title, image } = entry.data;
+---
+
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+
+<div class="container">
+    
+<h1 class="page-heading ">Featured Creators</h1>
+<p align="center">Below are some of the fantastic developers who we support at TSD</p>
+
+<section class=" content text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/2 md:w-full">
+          <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+            <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-100 text-indigo-500 flex-shrink-0">
+             <img src="https://alanthomsonsim.com/wp-content/uploads/2019/01/png/admin/at_new_logo.png" alt="">
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">AlanThomsonSimulation</h2>
+              <p class="leading-relaxed text-base">AlanThomsonSimulation is the one stop shop for Train Simulator content. Giving creators the chance to share their scenarios and addons for all. Also alongisde making their own content in house such as routes and scenarios.</p>
+              <a  href="https://alanthomsonsim.com/"class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2 md:w-full">
+          <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+            <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+           <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/294109351_467024392094390_2051326263969454659_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=IJwdwfDsUfwAX_mCMLr&_nc_ht=scontent-lcy1-2.xx&oh=00_AfBDmu_GqVQZ0jlXnCZkN148wInRAGX54MD8SFxWDLm9iw&oe=64668F5C">
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Armnstrong Powerhouse </h2>
+              <p class="leading-relaxed text-base">Armstrong Powerhouse is the fantastic developer behind some of the best stock you will see in TSC. They make enhancement packs and solo stock packs to an unholy amount of detail.</p>
+              <a href="https://armstrongpowerhouse.com"class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2 md:w-full">
+            <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+              <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center  text-indigo-500 flex-shrink-0">
+                <img src="https://www.justtrains.net/static/img/logos/jtlogo.jpg" alt="">
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Just Trains </h2>
+                <p class="leading-relaxed text-base">Just Trains have been making TS content for many years at this point, but represent some of the best route building in TS. Loads of content on their website and a great developer.</p>
+                <a href="justtrains.net" class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+      </div>
+    </div>
+  </section>
+
+</div>

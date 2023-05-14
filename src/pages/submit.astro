@@ -4,7 +4,7 @@ import Base from "@layouts/Base.astro";
 import { markdownify } from "@lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa/index.js";
-
+import Submit from "../layouts/components/submit.astro"; 
 const entry = await getEntryBySlug("pages", "submit");
 const { contact_form_action } = config.params;
 const { address, email, phone } = config.contactinfo;
@@ -21,48 +21,7 @@ const { title, description, meta_title, image } = entry.data;
     <div class="container">
     <h1 class="page-heading"> Submit Your News</h1>
     <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">We are pleased to announce we are now accepting news articles from the community. Use the form below to attach your pieces. </p>
-    <div class="sm:col-7 md:col-8">
-          <form class="contact-form row gy-2 justify-center" method="POST" action={contact_form_action}>
-            <input type="hidden" name="access_key" value="547bca9e-ca75-46f7-a37a-743d30c4cf8d">
-            <div class="lg:col-6">
-              <label class="mb-2 block" for="name">Name <span class="text-red-600">*</span></label>
-              <input class="form-input w-full" name="name" type="text" required />
-            </div>
-            <div class="lg:col-6">
-              <label class="mb-2 block" for="email">Email <span class="text-red-600">*</span></label>
-              <input class="form-input w-full" name="email" type="email" required />
-            </div>
-            <div class="col-12">
-              <label class="mb-2 block" for="subject">Title Of Piece</label>
-              <input
-                class="form-input w-full"
-                name="subject"
-                type="text"
-              />
-            </div>
-            <div class="col-12">
-              <label class="mb-2 block" for="subject">Game:</label>
-              <select id="game" name="game-type">
-                <option value="train-simulator">Train Simulator</option>
-                <option value="Train-Sim-World">Train Sim World</option>
-                <option value="SimRail">SimRail</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Your Message</label>
-
-              <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
-            </div>
-            
-            <div class="col-12">
-              <input type="checkbox" id="terms " name="terns" value="Accepted T&C" required>
-               <label for="terms"> Click to confirm you have read and understood the <a class="text-blue-200" href="terms">Terms and Conditions</a></label><br>
-              <button class="btn btn-primary mt-2">Submit Now</button>
-              <input type="hidden" name="redirect" value="thamks-for-submitting">
-            </div>
-          </form>
-        
+      <Submit />
         </div>
       </div>
     </div>
