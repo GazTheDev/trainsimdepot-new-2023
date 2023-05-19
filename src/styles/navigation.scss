@@ -14,6 +14,7 @@ input#nav-toggle:checked ~ #nav-menu {
 // navbar items
 .navbar {
   @apply relative flex max-w-[1260px] flex-wrap items-center justify-between;
+  color: color-red;
 }
 
 .navbar-brand img {
@@ -22,10 +23,12 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .navbar-nav {
   @apply text-center md:text-left;
+  color: white;
 }
 
 .nav-item {
   @apply mx-1;
+  color: white;
 }
 
 .nav-link {
@@ -38,6 +41,7 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .nav-dropdown-item {
   @apply mb-1;
+  color: white;
 }
 
 .nav-dropdown-link {

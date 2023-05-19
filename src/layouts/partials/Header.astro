@@ -18,8 +18,8 @@ export interface NavigationLink {
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class="   header pt-6">
-  <nav class="navbar container">
+<header class="bg-header pt-6">
+  <nav class=" navbar container">
     <!-- logo -->
     <div class=" order-0">
     <a href="/">
@@ -54,13 +54,13 @@ const { main }: { main: NavigationLink[] } = menu;
 
     <ul
       id="nav-menu"
-      class=" text-white navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto"
+      class=" bg-black-200  text-white navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto"
     >
       {
         main.map((menu) => (
           <>
             {menu.hasChildren ? (
-              <li class=" text-white nav-item nav-dropdown group relative cursor-pointer">
+              <li class=" bg-black-200 text-white nav-item nav-dropdown group relative cursor-pointer">
                 <span class="nav-link inline-flex items-center">
                   {menu.name}
                   <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
@@ -78,7 +78,7 @@ const { main }: { main: NavigationLink[] } = menu;
                 </ul>
               </li>
             ) : (
-              <li class="text-white nav-item">
+              <li class= "text-white nav-item">
                 <a href={menu.url} class="nav-link block">
                   {menu.name}
                 </a>
