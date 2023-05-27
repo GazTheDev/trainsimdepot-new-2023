@@ -1,0 +1,35 @@
+---
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import { markdownify } from "@lib/utils/textConverter";
+import { getEntryBySlug } from "astro:content";
+import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa/index.js";
+import Submit from "../layouts/components/submit.astro"; 
+const entry = await getEntryBySlug("pages", "simrail");
+const { contact_form_action } = config.params;
+const { address, email, phone } = config.contactinfo;
+const { title, description, meta_title, image } = entry.data;
+---
+
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+
+
+<div class="w-full bg-cover bg-center opacity-50 " style=" background-image: url(https://preview.redd.it/eu-07-in-simrail-start-of-the-playtests-v0-7ph4tusp7i4a1.jpg?width=2560&format=pjpg&auto=webp&s=6efc669cb75078985eb2d1dcbedc95d4fc4a136a);">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://simrail.eu/images/logo/logoSimRailcolor-on-white.svg">
+      <div class="text-center lg:w-2/3 w-full">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">SimRail Hub</h1>
+        <p class="mb-8 leading-relaxed text-white">Welcome to SimRail Hub, your one-stop destination for all things related to the immersive world of railway simulation! At SimRail Hub, we bring you the latest updates, patch notes, and featured content to enhance your railroading experience. Stay informed and be at the forefront of the ever-evolving SimRail universe, as we provide you with the most comprehensive and up-to-date information about new features, improvements, and bug fixes. Whether you're a seasoned train conductor or just starting your virtual railway journey, SimRail Hub is here to ensure you're always in the loop and ready to embark on thrilling railroad adventures. Explore, learn, and engage with our vibrant community at SimRail Hub today!</p>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        </div>
+      </div>
+    </div>
+  </section>

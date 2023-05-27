@@ -1,0 +1,58 @@
+---
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import { markdownify } from "@lib/utils/textConverter";
+import { getEntryBySlug } from "astro:content";
+import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa/index.js";
+import Submit from "../layouts/components/submit.astro"; 
+const entry = await getEntryBySlug("pages", "disclaimer");
+const { contact_form_action } = config.params;
+const { address, email, phone } = config.contactinfo;
+const { title, description, meta_title, image } = entry.data;
+---
+
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+
+<div class="container">
+<br>    
+
+<div id="fmtu-content-pane" class="container w-screen p-3 mt-12 text-zinc-800 dark:text-zinc-100 sm:mt-0 sm:p-5 sm:block">
+  <div class="w-full pb-2 mb-4 border-b border-zinc-300 dark:border-zinc-700">
+<h1 class="text-3xl font-light">Disclaimer: Independent and Unbiased Reviews</h1>
+</div>
+
+<div class="p-4 leading-relaxed bg-white rounded shadow dark:bg-zinc-800">
+<p class="mb-4">
+
+    This website is in no way sponsored, endorsed, or affiliated with any third-party developer, including but not limited to game developers, software companies, or product manufacturers. All opinions, reviews, and recommendations provided on this website are entirely independent and based solely on the experiences and perspectives of the authors.
+    
+    The reviews and assessments offered on this website are the result of thorough research, personal usage, and evaluation of the products discussed. The products mentioned or reviewed on this website have been purchased by the authors unless explicitly stated otherwise.
+    
+    We strive to maintain objectivity and provide unbiased information and evaluations. However, it's important to note that personal opinions and subjective experiences may influence the content and conclusions presented. We encourage readers to consider multiple sources and gather additional information before making any purchasing decisions.
+    
+    While we make every effort to ensure the accuracy and reliability of the information presented, we cannot guarantee the completeness, timeliness, or validity of the content. Therefore, any reliance you place on the information provided is strictly at your own risk.
+    
+    It is essential to understand that individual experiences may vary, and the suitability or performance of a product can be subjective. We strongly recommend conducting your own research and considering your specific needs and preferences before making any decisions based on the information provided on this website.
+    <br />
+    Furthermore, any product comparisons, ratings, or rankings mentioned on this website are intended for informational purposes only and should not be considered as absolute or definitive. The final decision on product selection should be based on your own assessment and consideration of various factors.
+    
+    We do not assume any responsibility for the actions, products, or services of any third-party companies or developers mentioned on this website. Additionally, we cannot be held liable for any damages, losses, or inconveniences incurred as a result of your use of this website or reliance on its content.
+   
+    <br />
+
+    Please be aware that the information provided on this website may change or become outdated over time. We reserve the right to modify, update, or remove content without prior notice.
+    
+    By using this website, you acknowledge and agree to the terms and conditions of this disclaimer. If you do not agree with any part of this disclaimer, please refrain from using our website.
+    
+    <strong>This disclaimer is subject to change without notice.</strong></p>
+</div>
+
+</div>
+</div>
+</div>
